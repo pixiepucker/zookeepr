@@ -98,6 +98,10 @@ app.get('/api/animals/:id', (req, res) => {
     }
 });
 
+app.get('/', (req,res) => {
+    res.sendFile(path.join(__dirname,'./public/index.html'));
+});
+
 app.post('/api/animals', (req,res)=>{
     //set id based on next index of arr 
     req.body.id = animals.length.toString();
